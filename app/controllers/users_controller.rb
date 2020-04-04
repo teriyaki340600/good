@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     @books = @user.books.page(params[:page]).reverse_order
   	@book = Book.new #new bookの新規投稿で必要（保存処理はbookコントローラー側で実施）
+    @book_comment = BookComment.new
   end
 
   def index
